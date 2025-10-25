@@ -137,7 +137,7 @@ export default function Home() {
               <div className={styles.prizeRibbon}>2nd Prize</div>
               <div className={styles.prizeImgContainer}>
                 <Image
-                  src="/images/prizes/sony-55.webp"
+                  src="/images/prizes/tv-55.webp"
                   alt="Sony 55 LED TV"
                   width={400}
                   height={300}
