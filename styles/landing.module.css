@@ -699,6 +699,11 @@
 }
 
 @media (max-width: 480px) {
+    .container::before {
+        background-position: -100px;
+        background-attachment: scroll;
+    }
+
     .celebrationEmblem {
         width: 90px;
         height: 90px;
