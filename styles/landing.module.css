@@ -161,12 +161,22 @@
     }
 }
 
+.heroPresenter {
+    font-family: var(--font-orbitron);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 2rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
 .heroTitle {
     font-family: var(--font-orbitron);
     font-size: clamp(3rem, 10vw, 7rem);
     font-weight: 900;
     line-height: 1.1;
-    margin: 0 0 1rem;
+    margin: 0 0 3rem;
     letter-spacing: -2px;
     text-transform: uppercase;
 }
@@ -504,6 +514,10 @@
         font-size: 3rem;
     }
 
+    .heroPresenter {
+        font-size: 1.3rem;
+    }
+
     .heroStats {
         gap: 1rem;
     }
@@ -539,6 +553,10 @@
 
     .heroTitle {
         font-size: 2.5rem;
+    }
+
+    .heroPresenter {
+        font-size: 1.1rem;
     }
 
     .heroSubtitle {

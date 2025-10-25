@@ -59,20 +59,16 @@ export default function Home() {
           </div>
 
           <div className={styles.heroContent}>
-            <div className={styles.heroBadge}>
-              <span className={styles.badgeDot}></span>
-              Championship 2025
-            </div>
+
+            <p className={styles.heroPresenter}>
+              Kodava Hockey Academy<sup>®</sup> presents
+            </p>
 
             <h1 className={styles.heroTitle}>
               LEVISTA
               <span className={styles.heroTitleGradient}>CHAMPIONSHIP</span>
-              TROPHY
+              TROPHY 2025
             </h1>
-
-            <p className={styles.heroSubtitle}>
-              Presented by Kodava Hockey Academy
-            </p>
 
             <div className={styles.heroStats}>
               <div className={styles.statCard}>
