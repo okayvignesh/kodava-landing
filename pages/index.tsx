@@ -90,7 +90,8 @@ export default function Home() {
           <div className={styles.heroContent}>
 
             <p className={styles.heroPresenter}>
-              Kodava Hockey Academy<sup>®</sup> <br />presents
+              Kodava Hockey Academy<sup>®</sup> <br />
+              <span className={styles.heroTitleGradient}>presents</span>
             </p>
 
             <h1 className={styles.heroTitle}>
