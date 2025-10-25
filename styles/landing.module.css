@@ -1,0 +1,596 @@
+/* Global Styles */
+.container {
+    min-height: 100vh;
+    background: #0a0a0a;
+    font-family: var(--font-montserrat);
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/hockey-turf.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.35;
+    z-index: 0;
+}
+
+/* Header Images */
+.headerImages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    pointer-events: none;
+}
+
+.logoContainer,
+.presidentContainer {
+    transition: transform 0.3s ease;
+}
+
+.logoContainer:hover,
+.presidentContainer:hover {
+    transform: scale(1.05);
+}
+
+.logoImage,
+.presidentImage {
+    border-radius: 15px;
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.heroBackground {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.gradient1 {
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    background: transparent;
+    animation: float 20s ease-in-out infinite;
+}
+
+.gradient2 {
+    position: absolute;
+    top: 20%;
+    right: -20%;
+    width: 70%;
+    height: 70%;
+    background: transparent;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+.gradient3 {
+    position: absolute;
+    bottom: -30%;
+    left: 30%;
+    width: 60%;
+    height: 60%;
+    background: transparent;
+    animation: float 30s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -30px) rotate(5deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(-5deg);
+    }
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.heroBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    background: #ff6b35;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.heroTitle {
+    font-family: var(--font-orbitron);
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.heroTitleGradient {
+    display: block;
+    background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.heroStats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.statCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+    border-color: #ff6b35;
+}
+
+.statNumber {
+    font-family: var(--font-orbitron);
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.eventInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.infoCard {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.infoCard:hover {
+    transform: translateY(-3px);
+    border-color: #ff6b35;
+}
+
+.infoIcon {
+    font-size: 2.5rem;
+    filter: grayscale(0.3);
+}
+
+.infoText {
+    flex: 1;
+}
+
+.infoLabel {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+}
+
+.infoValue {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Prizes Section */
+.prizesSection {
+    padding: 8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.sectionBadge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 107, 53, 0.15);
+    border: 1px solid rgba(255, 107, 53, 0.4);
+    border-radius: 50px;
+    color: #ff6b35;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+    font-family: var(--font-orbitron);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    margin: 0 0 1rem;
+    background: linear-gradient(135deg, #ffffff, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sectionDesc {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Top 3 Prizes */
+.topPrizes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.prizeCard {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.prizeCard:hover {
+    transform: translateY(-10px);
+    border-color: #ff6b35;
+}
+
+.prize1 {
+    grid-column: span 1;
+}
+
+.prizeRibbon {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: #ffffff;
+    padding: 0.5rem 3rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(45deg);
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.prizeImgContainer {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(247, 147, 30, 0.08));
+}
+
+.prizeImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.prizeCard:hover .prizeImg {
+    transform: scale(1.1);
+}
+
+.prizeDetails {
+    padding: 2rem;
+}
+
+.prizeTitle {
+    font-family: var(--font-orbitron);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: #ffffff;
+}
+
+.prizeDescription {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Additional Prizes */
+.additionalPrizes {
+    margin-top: 5rem;
+}
+
+.additionalTitle {
+    font-family: var(--font-orbitron);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #ffffff, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.prizeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gridPrizeCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.gridPrizeCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--prize-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.gridPrizeCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--prize-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gridPrizeCard:hover::before {
+    transform: scaleX(1);
+}
+
+.gridPrizeIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: grayscale(0.2);
+}
+
+.gridPrizeRank {
+    font-weight: 700;
+    color: var(--prize-color);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.gridPrizeName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .headerImages {
+        position: absolute;
+        padding: 1rem;
+    }
+
+    .logoImage,
+    .presidentImage {
+        width: 80px;
+        height: 80px;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+    }
+
+    .heroStats {
+        gap: 1rem;
+    }
+
+    .statCard {
+        padding: 1.5rem 2rem;
+    }
+
+    .topPrizes {
+        grid-template-columns: 1fr;
+    }
+
+    .prizeGrid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .eventInfo {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .headerImages {
+        position: absolute;
+        padding: 0.75rem;
+    }
+
+    .logoImage,
+    .presidentImage {
+        width: 60px;
+        height: 60px;
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.2rem;
+    }
+
+    .statCard {
+        padding: 1rem 1.5rem;
+    }
+
+    .statNumber {
+        font-size: 2rem;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .prizeTitle {
+        font-size: 1.5rem;
+    }
+
+    .additionalTitle {
+        font-size: 1.8rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Styling */
+::selection {
+    background: #ff6b35;
+    color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
