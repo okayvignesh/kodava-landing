@@ -19,12 +19,32 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Levista Championship Trophy 2025 - Kodava Hockey Academy</title>
+        <title>Levista Champions Trophy 2025 - Kodava Hockey Academy</title>
         <meta
           name="description"
-          content="Kodava Hockey Academy presents Levista Championship Trophy 2025 Raffle with 15 exciting prizes. Join us from 26th-29th Dec 2025 in Murnad."
+          content="Kodava Hockey Academy presents Levista Champions Trophy 2025 Raffle with 15 exciting prizes. Join us from 26th-29th Dec 2025 in Murnad."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Levista Champions Trophy 2025 - Kodava Hockey Academy" />
+        <meta property="og:description" content="Kodava Hockey Academy presents Levista Champions Trophy 2025 Raffle with 15 exciting prizes. Join us from 26th-29th Dec 2025 in Murnad. Celebrating 25 Years of Kodava Hockey Festival!" />
+        <meta property="og:image" content="/images/logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Kodava Hockey Academy" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Levista Champions Trophy 2025 - Kodava Hockey Academy" />
+        <meta name="twitter:description" content="Win amazing prizes! 15 exciting prizes including Ather Electric Scooter, LED TVs & more. Join the celebration of 25 Years Kodava Hockey Festival." />
+        <meta name="twitter:image" content="/images/logo.png" />
+
+        {/* Additional Meta Tags */}
+        <meta name="keywords" content="Kodava Hockey, Levista Championship, Hockey Tournament, Raffle Prizes, Kodava Academy, Murnad, Hockey Festival" />
+        <meta name="author" content="Kodava Hockey Academy" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className={`${styles.container} ${montserrat.variable} ${orbitron.variable}`}>
@@ -32,7 +52,7 @@ export default function Home() {
         <div className={styles.celebrationEmblem}>
           <div className={styles.emblemInner}>
             <div className={styles.emblemYear}>25</div>
-            <div className={styles.emblemText}>YEARS</div>
+            <div className={styles.emblemText}>YEARS of</div>
             <div className={styles.emblemSubtext}>Kodava Hockey Festival</div>
           </div>
         </div>
@@ -75,7 +95,7 @@ export default function Home() {
 
             <h1 className={styles.heroTitle}>
               LEVISTA
-              <span className={styles.heroTitleGradient}>CHAMPIONSHIP</span>
+              <span className={styles.heroTitleGradient}>CHAMPIONS</span>
               TROPHY 2025
             </h1>
 
@@ -92,17 +112,18 @@ export default function Home() {
 
             <div className={styles.eventInfo} id="details">
               <div className={styles.infoCard}>
-                <div className={styles.infoIcon}>📅</div>
                 <div className={styles.infoText}>
                   <div className={styles.infoLabel}>Event Dates</div>
                   <div className={styles.infoValue}>26th - 29th December 2025</div>
                 </div>
               </div>
               <div className={styles.infoCard}>
-                <div className={styles.infoIcon}>📍</div>
-                <div className={styles.infoText}>
-                  <div className={styles.infoLabel}>Location</div>
-                  <div className={styles.infoValue}>Murnad</div>
+                <div className="flex items-center gap-2 justify-center w-100">
+                  <div className={styles.infoIcon}>📍</div>
+                  <div className="flex flex-col">
+                    <div className={styles.infoLabel}>Location</div>
+                    <div className={styles.infoValue}>Murnad</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -172,22 +193,117 @@ export default function Home() {
           <div className={styles.additionalPrizes}>
             <h3 className={styles.additionalTitle}>More Amazing Prizes</h3>
             <div className={styles.prizeGrid}>
-              {[
-                { rank: "4th", icon: "🎵", name: "Sony Music System", color: "#FF6B6B" },
-                { rank: "5th", icon: "❄️", name: "Refrigerator", color: "#4ECDC4" },
-                { rank: "6th", icon: "⚡", name: "Stihl Chainsaw", color: "#FFD93D" },
-                { rank: "7th", icon: "🎯", name: "Air Gun", color: "#95E1D3" },
-                { rank: "8th", icon: "🌿", name: "Stihl Brush Cutter", color: "#A8E6CF" },
-                { rank: "9th", icon: "🚲", name: "Urban Terrain Bicycle", color: "#FF8B94" },
-                { rank: "10th", icon: "🔥", name: "Microwave Oven", color: "#C7CEEA" },
-                { rank: "11th-15th", icon: "🏑", name: "Hockey Stick (5 Winners)", color: "#B4A7D6" },
-              ].map((prize, index) => (
-                <div key={index} className={styles.gridPrizeCard} >
-                  <div className={styles.gridPrizeIcon}>{prize.icon}</div>
-                  <div className={styles.gridPrizeRank}>{prize.rank}</div>
-                  <div className={styles.gridPrizeName}>{prize.name}</div>
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/music-system.jpg"
+                    alt="Sony Music System"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
                 </div>
-              ))}
+                <div className={styles.gridPrizeRank}>4th</div>
+                <div className={styles.gridPrizeName}>Sony Music System</div>
+              </div>
+
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/refrigerator.jpg"
+                    alt="Refrigerator"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
+                </div>
+                <div className={styles.gridPrizeRank}>5th</div>
+                <div className={styles.gridPrizeName}>Refrigerator</div>
+              </div>
+
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/chainsaw.webp"
+                    alt="Stihl Chainsaw"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
+                </div>
+                <div className={styles.gridPrizeRank}>6th</div>
+                <div className={styles.gridPrizeName}>Stihl Chainsaw</div>
+              </div>
+
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/airgun.jpg"
+                    alt="Air Gun"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
+                </div>
+                <div className={styles.gridPrizeRank}>7th</div>
+                <div className={styles.gridPrizeName}>Air Gun</div>
+              </div>
+
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/brush-cutter.jpg"
+                    alt="Stihl Brush Cutter"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
+                </div>
+                <div className={styles.gridPrizeRank}>8th</div>
+                <div className={styles.gridPrizeName}>Stihl Brush Cutter</div>
+              </div>
+
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/cycle.webp"
+                    alt="Urban Terrain Bicycle"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
+                </div>
+                <div className={styles.gridPrizeRank}>9th</div>
+                <div className={styles.gridPrizeName}>Urban Terrain Bicycle</div>
+              </div>
+
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/oven.avif"
+                    alt="Microwave Oven"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
+                </div>
+                <div className={styles.gridPrizeRank}>10th</div>
+                <div className={styles.gridPrizeName}>Microwave Oven</div>
+              </div>
+
+              <div className={styles.gridPrizeCard}>
+                <div className={styles.gridPrizeImgContainer}>
+                  <Image
+                    src="/images/prizes/hockey.webp"
+                    alt="Hockey Stick"
+                    width={250}
+                    height={150}
+                    className={styles.gridPrizeImg}
+                  />
+                </div>
+                <div className={styles.gridPrizeRank}>11th-15th</div>
+                <div className={styles.gridPrizeName}>Hockey Stick (5 Winners)</div>
+              </div>
             </div>
           </div>
         </section>
