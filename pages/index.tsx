@@ -28,6 +28,15 @@ export default function Home() {
       </Head>
 
       <div className={`${styles.container} ${montserrat.variable} ${orbitron.variable}`}>
+        {/* Celebration Emblem */}
+        <div className={styles.celebrationEmblem}>
+          <div className={styles.emblemInner}>
+            <div className={styles.emblemYear}>25</div>
+            <div className={styles.emblemText}>YEARS</div>
+            <div className={styles.emblemSubtext}>Kodava Hockey Festival</div>
+          </div>
+        </div>
+
         {/* Logo and President Images */}
         <div className={styles.headerImages}>
           <div className={styles.logoContainer}>
@@ -73,7 +82,7 @@ export default function Home() {
             <div className={styles.heroStats}>
               <div className={styles.statCard}>
                 <div className={styles.statNumber}>15</div>
-                <div className={styles.statLabel}>Exciting Prizes</div>
+                <div className={styles.statLabel}>Raffle Prizes</div>
               </div>
               <div className={styles.statCard}>
                 <div className={styles.statNumber}>4</div>
@@ -123,9 +132,6 @@ export default function Home() {
               </div>
               <div className={styles.prizeDetails}>
                 <h3 className={styles.prizeTitle}>Ather Electric Scooter</h3>
-                <p className={styles.prizeDescription}>
-                  Experience the future of mobility with Ather's premium electric scooter featuring smart technology
-                </p>
               </div>
             </div>
 
@@ -142,9 +148,6 @@ export default function Home() {
               </div>
               <div className={styles.prizeDetails}>
                 <h3 className={styles.prizeTitle}>Sony 55" LED TV</h3>
-                <p className={styles.prizeDescription}>
-                  Immersive entertainment with crystal clear 4K resolution and stunning colors
-                </p>
               </div>
             </div>
 
@@ -161,9 +164,6 @@ export default function Home() {
               </div>
               <div className={styles.prizeDetails}>
                 <h3 className={styles.prizeTitle}>Sony 43" LED TV</h3>
-                <p className={styles.prizeDescription}>
-                  Perfect viewing experience with vibrant colors and smart features
-                </p>
               </div>
             </div>
           </div>
